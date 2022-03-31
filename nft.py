@@ -16,3 +16,6 @@ if endpoint =="Assets":
     r= requests.get("https://api.opensea.io/api/v1/assets")
 
     st.write(r.json())
+    
+    
+    # Waiting the API key for continue the project - Update 31-march-2022
