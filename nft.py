@@ -1,10 +1,18 @@
-import requests
+import streamlit as st
+import requests, json
 
-params = {
-    'collection': 'the-wanderers',
-    'limit':1
-}
+endpoint = st.sidebar.selectbox("Endpoints",['Assets','Events','Rarity'])
+st.header(f"DK NFT API Analyze - {endpoint}")
 
-r= requests.get("https://api.opensea.io/api/v1/assets")
+st.sidebar.write("Some sidebar")
 
-print(r.json())
+if endpoint =="Assets":
+
+    params = {
+        'collection': 'the-wanderers',
+        'limit':1
+    }
+
+    r= requests.get("https://api.opensea.io/api/v1/assets")
+
+    st.write(r.json())
